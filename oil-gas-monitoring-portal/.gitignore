@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.db
+.env
+secrets/
+.runtime/
+data/kaggle/
+artifacts/
+data/public/
+data/models/
+data/generated/

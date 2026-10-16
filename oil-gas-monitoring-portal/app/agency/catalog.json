@@ -1,0 +1,1513 @@
+{
+  "agency_name": "Oil & Gas AI Agency",
+  "items": [
+    {
+      "id": "AG-001",
+      "department": "Exploration & geophysics",
+      "title": "Facies interpretation",
+      "engine": "well-facies",
+      "technologies": [
+        "AI",
+        "ML",
+        "Classification",
+        "Transformer"
+      ],
+      "objective": "Compare a held-out-well classification baseline with the majority reference.",
+      "business_kpi": "Facies review time and held-out-well error",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-002",
+      "department": "Exploration & geophysics",
+      "title": "Well-log quality and reconstruction",
+      "engine": "well-logs",
+      "technologies": [
+        "Statistical",
+        "ML",
+        "Transformer"
+      ],
+      "objective": "Identify missing/sentinel curves and inspect reconstruction errors.",
+      "business_kpi": "Valid log coverage and reconstruction error",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-003",
+      "department": "Reservoir engineering",
+      "title": "Reservoir inventory review",
+      "engine": "reservoir-inventory",
+      "technologies": [
+        "AI",
+        "GIS",
+        "Asset management"
+      ],
+      "objective": "Explore reported basin inventory and missing engineering evidence.",
+      "business_kpi": "Inventory completeness and provenance",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-004",
+      "department": "Reservoir engineering",
+      "title": "Water-cut and production surveillance",
+      "engine": "production",
+      "technologies": [
+        "Statistical",
+        "ML",
+        "IoT"
+      ],
+      "objective": "Replay daily oil/water rates and calculate water cut only for valid denominators.",
+      "business_kpi": "Water-cut trend and missing-data coverage",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-005",
+      "department": "Drilling & completions",
+      "title": "Gas peaks by drilling depth",
+      "engine": "drilling-gas-peaks",
+      "technologies": [
+        "Statistical",
+        "ML",
+        "IoT"
+      ],
+      "objective": "Review cleaned gas/depth data and flagged statistical departures.",
+      "business_kpi": "Gas/depth data quality; advisory review time",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-006",
+      "department": "Drilling & completions",
+      "title": "Drilling evidence assistant",
+      "engine": "rag",
+      "technologies": [
+        "RAG",
+        "NLP",
+        "AI"
+      ],
+      "objective": "Retrieve source evidence and generate a grounded local-model answer with citations.",
+      "business_kpi": "Citation validity and abstention rate",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R11",
+        "R12"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-007",
+      "department": "Well integrity",
+      "title": "Historical pressure surveillance",
+      "engine": "volve-production",
+      "technologies": [
+        "IoT",
+        "Statistical",
+        "ML"
+      ],
+      "objective": "Inspect pressure features and offline anomaly evidence without claiming barrier integrity.",
+      "business_kpi": "Pressure data coverage and investigated advisories",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-008",
+      "department": "Production operations",
+      "title": "Historical production replay",
+      "engine": "production",
+      "technologies": [
+        "IoT",
+        "Statistical",
+        "AI"
+      ],
+      "objective": "Replay recorded well production with dates and units visible.",
+      "business_kpi": "Production reconciliation and missing periods",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-009",
+      "department": "Production operations",
+      "title": "Tank behavior demonstration",
+      "engine": "twin",
+      "technologies": [
+        "Digital twin",
+        "Statistical",
+        "IoT"
+      ],
+      "objective": "Compare two tank inflow/outflow settings in an explicitly synthetic mass-balance model.",
+      "business_kpi": "Balance residual and scenario constraint excursions",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R13"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-010",
+      "department": "Process engineering & refining",
+      "title": "Process scenario sandbox",
+      "engine": "twin",
+      "technologies": [
+        "Digital twin",
+        "AI"
+      ],
+      "objective": "Demonstrate assumptions, conservation and limits using an uncalibrated tank proxy.",
+      "business_kpi": "Model validation requirements and balance closure",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R13"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-011",
+      "department": "Process engineering & refining",
+      "title": "Policy optimization sandbox",
+      "engine": "rl",
+      "technologies": [
+        "Reinforcement learning",
+        "Digital twin",
+        "AI"
+      ],
+      "objective": "Train a tabular Q-learning controller in simulation and compare a fixed reference on held-out seeds.",
+      "business_kpi": "Simulation reward and safety-bound violations",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R13",
+        "R14"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-012",
+      "department": "Maintenance & reliability",
+      "title": "Equipment failure classification",
+      "engine": "machine-maintenance",
+      "technologies": [
+        "AI",
+        "ML",
+        "Classification",
+        "Transformer"
+      ],
+      "objective": "Inspect held-out manufacturing-proxy classification and a reference baseline.",
+      "business_kpi": "Balanced accuracy and human triage time",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-013",
+      "department": "Maintenance & reliability",
+      "title": "Asset operating clusters",
+      "engine": "clusters",
+      "technologies": [
+        "ML",
+        "Clustering",
+        "Asset management"
+      ],
+      "objective": "Group pipeline-condition records by numeric operating features and inspect cluster profiles.",
+      "business_kpi": "Cluster separation and engineering interpretability",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-014",
+      "department": "Maintenance & reliability",
+      "title": "Inspection robot action classification",
+      "engine": "robot",
+      "technologies": [
+        "Robotics",
+        "ML",
+        "Classification"
+      ],
+      "objective": "Classify recorded ultrasound navigation states without issuing robot commands.",
+      "business_kpi": "Held-out navigation-action accuracy",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-015",
+      "department": "Inspection & asset integrity",
+      "title": "Corrosion condition assessment",
+      "engine": "pipeline-operations",
+      "technologies": [
+        "Asset management",
+        "Statistical",
+        "ML",
+        "Classification"
+      ],
+      "objective": "Review condition baseline plus explicitly missing NDT and site-criticality inputs.",
+      "business_kpi": "Inspection coverage and verified defect disposition",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-016",
+      "department": "Inspection & asset integrity",
+      "title": "Surface-defect segmentation",
+      "engine": "corrosion",
+      "technologies": [
+        "CV",
+        "Image segmentation",
+        "AI"
+      ],
+      "objective": "Inspect pixel/annotation evidence from a concrete-defect proxy, separate from steel NDT.",
+      "business_kpi": "Mask quality and domain-transfer review",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R18"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-017",
+      "department": "Inspection & asset integrity",
+      "title": "Aerial survey classification",
+      "engine": "drone",
+      "technologies": [
+        "Drone",
+        "CV",
+        "Classification"
+      ],
+      "objective": "Classify recorded aerial proxy scenes and show required flight/asset metadata.",
+      "business_kpi": "Scene classification and inspection evidence completeness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R16"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-018",
+      "department": "Pipeline & midstream",
+      "title": "Historical incident GIS",
+      "engine": "gis",
+      "technologies": [
+        "GIS",
+        "Statistical",
+        "Asset management"
+      ],
+      "objective": "Map recorded incidents with valid coordinates and summarize causes and releases.",
+      "business_kpi": "Coordinate coverage and incident prioritization",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R17"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-019",
+      "department": "Pipeline & midstream",
+      "title": "Pipeline maintenance review",
+      "engine": "pipeline-maintenance",
+      "technologies": [
+        "ML",
+        "Statistical",
+        "Classification"
+      ],
+      "objective": "Compare condition classification with majority baseline and inspect leakage caveats.",
+      "business_kpi": "Condition error; no failure lead-time claim",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-020",
+      "department": "LNG, terminals & storage",
+      "title": "Storage scenario comparison",
+      "engine": "twin",
+      "technologies": [
+        "Digital twin",
+        "Statistical"
+      ],
+      "objective": "Compare synthetic inventory trajectories; identify inputs needed for LNG physics.",
+      "business_kpi": "Inventory balance; calibrated-model readiness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R13"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-021",
+      "department": "HSE & occupational safety",
+      "title": "Personnel detection and PPE evidence review",
+      "engine": "detection",
+      "technologies": [
+        "CV",
+        "Detection",
+        "AI"
+      ],
+      "objective": "Compare pretrained person detections with source person boxes; inspect separate source PPE annotations without claiming PPE inference.",
+      "business_kpi": "Detection precision/recall and human review",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-022",
+      "department": "HSE & occupational safety",
+      "title": "PPE image-level classification",
+      "engine": "ppe-images",
+      "technologies": [
+        "CV",
+        "Classification",
+        "Transformer"
+      ],
+      "objective": "Inspect actual CNN/ViT scores against the reference before any production claim.",
+      "business_kpi": "Balanced accuracy and source coverage",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-023",
+      "department": "Environment & sustainability",
+      "title": "Aerial land-cover segmentation",
+      "engine": "segmentation",
+      "technologies": [
+        "CV",
+        "Image segmentation",
+        "GIS",
+        "Drone"
+      ],
+      "objective": "Train pixel classification on separate aerial tiles and visualize held-out masks.",
+      "business_kpi": "Held-out mean IoU and pixel accuracy",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R18"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-024",
+      "department": "Environment & sustainability",
+      "title": "Methane trend reporting",
+      "engine": "methane-emissions",
+      "technologies": [
+        "Statistical",
+        "ML"
+      ],
+      "objective": "Review aggregate country/sector methane data and evidence limitations.",
+      "business_kpi": "Reporting completeness and unit consistency",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-025",
+      "department": "Environment & sustainability",
+      "title": "Oil-spill classification benchmark",
+      "engine": "oil-spill-classification",
+      "technologies": [
+        "ML",
+        "Classification",
+        "AI"
+      ],
+      "objective": "Compare held-out spill-feature classification with the majority reference.",
+      "business_kpi": "Minority-class recall and false-positive cost",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-026",
+      "department": "Energy & utilities",
+      "title": "Environmental telemetry replay",
+      "engine": "iot",
+      "technologies": [
+        "IoT",
+        "Statistical",
+        "AI"
+      ],
+      "objective": "Replay recorded device measurements and compare controlled outage/quality scenarios.",
+      "business_kpi": "Freshness, missing windows and advisory review",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R05",
+        "R06"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-027",
+      "department": "Instrumentation & OT",
+      "title": "Gas-sensor drift",
+      "engine": "gas-sensor-drift",
+      "technologies": [
+        "IoT",
+        "ML",
+        "Classification",
+        "Transformer"
+      ],
+      "objective": "Evaluate sensor batch transfer and compare a reference model.",
+      "business_kpi": "Cross-batch class error and drift evidence",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-028",
+      "department": "Instrumentation & OT",
+      "title": "Defensive IoT traffic classification",
+      "engine": "security",
+      "technologies": [
+        "Security",
+        "IoT",
+        "ML",
+        "Classification"
+      ],
+      "objective": "Classify a recorded network dataset; no scans or traffic generation.",
+      "business_kpi": "Balanced accuracy, class coverage and false alarms",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R07",
+        "R08"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-029",
+      "department": "Supply chain & logistics",
+      "title": "Logistics and spare-parts review",
+      "engine": "logistics",
+      "technologies": [
+        "Asset management",
+        "ML",
+        "Statistical"
+      ],
+      "objective": "Profile recorded logistics fields and distinguish delay proxies from client critical spares.",
+      "business_kpi": "Delay exposure and inventory completeness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-030",
+      "department": "Commercial & finance",
+      "title": "Historical energy-price analysis",
+      "engine": "energy-market-prices",
+      "technologies": [
+        "Statistical",
+        "ML",
+        "Transformer"
+      ],
+      "objective": "Inspect historical price distribution and model baselines with chronology limitations.",
+      "business_kpi": "Forecast evaluation readiness and source freshness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-031",
+      "department": "Commercial & finance",
+      "title": "Gas-demand planning",
+      "engine": "natural-gas-demand",
+      "technologies": [
+        "Statistical",
+        "ML",
+        "IoT"
+      ],
+      "objective": "Review historical demand by available series and units.",
+      "business_kpi": "Demand-series coverage and holdout error readiness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-032",
+      "department": "IT, data & cybersecurity",
+      "title": "Security triage evidence",
+      "engine": "security",
+      "technologies": [
+        "Security",
+        "ML",
+        "AI"
+      ],
+      "objective": "Show classified recorded flows, class errors and analyst review requirements.",
+      "business_kpi": "Triage time and class-weighted error",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R07",
+        "R08"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-033",
+      "department": "IT, data & cybersecurity",
+      "title": "Data and model governance",
+      "engine": "governance",
+      "technologies": [
+        "Security",
+        "Asset management",
+        "AI"
+      ],
+      "objective": "Inspect local source manifests, license metadata, model results and open release risks.",
+      "business_kpi": "Lineage coverage and unresolved release gates",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-034",
+      "department": "Technical documentation & training",
+      "title": "Source-grounded knowledge assistant",
+      "engine": "rag",
+      "technologies": [
+        "RAG",
+        "NLP",
+        "AI"
+      ],
+      "objective": "Retrieve actual document passages and generate a cited answer locally; abstain if unsupported.",
+      "business_kpi": "Grounding, access controls and citation accuracy",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "recorded-data experiment",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R11",
+        "R12"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-035",
+      "department": "Inspection & asset integrity",
+      "title": "Robot route and no-go zones",
+      "engine": "route",
+      "technologies": [
+        "Robotics",
+        "GIS",
+        "Asset management"
+      ],
+      "objective": "Plan a path across a synthetic inspection grid with explicit obstacles.",
+      "business_kpi": "Route feasibility and forbidden-cell avoidance",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R15",
+        "R16"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    },
+    {
+      "id": "AG-036",
+      "department": "Pipeline & midstream",
+      "title": "Drone inspection route planning",
+      "engine": "route",
+      "technologies": [
+        "Drone",
+        "GIS",
+        "Asset management"
+      ],
+      "objective": "Demonstrate route planning on a synthetic grid; flight operations remain outside the demo.",
+      "business_kpi": "Inspection waypoint coverage; flight approval readiness",
+      "workflow": [
+        "Select and inspect source",
+        "Run bounded analytical or simulation pipeline",
+        "Inspect visualization and evidence",
+        "Record human review",
+        "Export client report"
+      ],
+      "mode": "simulation",
+      "risk_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R10",
+        "R20",
+        "R15",
+        "R16"
+      ],
+      "agency_deliverables": [
+        "Data/source assessment",
+        "Reproducible demo pipeline",
+        "Evidence and risk report",
+        "Pilot acceptance plan"
+      ],
+      "acceptance": "Source mode and provenance visible; pipeline completes; metrics/simulation assumptions shown; review persists; export contains source references and limitations."
+    }
+  ],
+  "risks": [
+    {
+      "id": "R01",
+      "category": "Operational safety",
+      "severity": "Critical",
+      "risk": "AI advice mistaken for certified protection",
+      "owner": "HSE lead",
+      "control": "Independent safety systems and human approval; no control writes.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R02",
+      "category": "Model performance",
+      "severity": "High",
+      "risk": "Weak or imbalanced model presented as reliable",
+      "owner": "ML lead",
+      "control": "Show held-out metrics and baseline comparison; require site evaluation.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R03",
+      "category": "Domain shift",
+      "severity": "High",
+      "risk": "Construction/lab/geothermal data generalized to oil/gas",
+      "owner": "Domain engineer",
+      "control": "Label proxies; validate on approved field data.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R04",
+      "category": "Data leakage",
+      "severity": "High",
+      "risk": "Derived targets or shared wells inflate scores",
+      "owner": "ML lead",
+      "control": "Group/temporal splits and feature leakage review.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R05",
+      "category": "IoT freshness",
+      "severity": "High",
+      "risk": "Historical or stale readings presented as live",
+      "owner": "OT lead",
+      "control": "Display source mode, capture time, quality and last successful update.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R06",
+      "category": "Sensor validity",
+      "severity": "High",
+      "risk": "Drift, bad units or calibration invalidate analysis",
+      "owner": "Instrumentation lead",
+      "control": "Unit registry, calibration records and bad-quality handling.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R07",
+      "category": "Cyber access",
+      "severity": "Critical",
+      "risk": "Unauthorized OT connectivity or control action",
+      "owner": "Security lead",
+      "control": "Read-only sandbox; separate demo from OT networks.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R08",
+      "category": "Identity and scope",
+      "severity": "High",
+      "risk": "Shared reviewer credentials expose client/site data",
+      "owner": "Security lead",
+      "control": "Individual identity and site scopes before multi-client production.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R09",
+      "category": "Privacy",
+      "severity": "High",
+      "risk": "Worker imagery or documents disclosed",
+      "owner": "Privacy owner",
+      "control": "Minimize evidence and enforce retention/access rules.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R10",
+      "category": "Licensing",
+      "severity": "High",
+      "risk": "Publisher data terms unsuitable for client use",
+      "owner": "Commercial/legal owner",
+      "control": "Review underlying rights; no blanket commercial permission claim.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R11",
+      "category": "RAG grounding",
+      "severity": "High",
+      "risk": "Generated answer invents procedures or citations",
+      "owner": "Knowledge owner",
+      "control": "Source IDs, evidence excerpts, abstention and operator review.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R12",
+      "category": "Prompt injection",
+      "severity": "High",
+      "risk": "Retrieved text attempts to override system behavior",
+      "owner": "Security lead",
+      "control": "Treat evidence as data; no tools or operational actions from generated text.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R13",
+      "category": "Twin fidelity",
+      "severity": "High",
+      "risk": "Uncalibrated simulation used for decisions",
+      "owner": "Process engineer",
+      "control": "Explicit equations, assumptions, calibration and uncertainty requirements.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R14",
+      "category": "RL transfer",
+      "severity": "Critical",
+      "risk": "Simulated policy controls real equipment",
+      "owner": "Controls engineer",
+      "control": "Simulation-only policy; no actuator integration.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R15",
+      "category": "Robotics safety",
+      "severity": "Critical",
+      "risk": "Route demo interpreted as safe robot operation",
+      "owner": "Robotics lead",
+      "control": "Synthetic no-go map; physical validation and fail-safe hardware required.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R16",
+      "category": "Drone operations",
+      "severity": "High",
+      "risk": "Survey demo lacks flight/airspace/site authorization",
+      "owner": "UAV lead",
+      "control": "No flight command; validate mission, weather and site permissions separately.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R17",
+      "category": "GIS accuracy",
+      "severity": "High",
+      "risk": "Missing/wrong coordinates drive response",
+      "owner": "GIS analyst",
+      "control": "Validate bounds and CRS; report excluded locations and no inferred asset proximity.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R18",
+      "category": "Inspection validity",
+      "severity": "High",
+      "risk": "Image masks mistaken for wall-thickness proof",
+      "owner": "Integrity engineer",
+      "control": "Vision is a screening proxy; engineering/NDT verification required.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R19",
+      "category": "Availability",
+      "severity": "High",
+      "risk": "Demo outage or resource exhaustion interrupts presentation",
+      "owner": "Platform lead",
+      "control": "Precompute reports; bounded jobs; health checks; offline fallback.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R20",
+      "category": "Auditability",
+      "severity": "High",
+      "risk": "Metrics or client report cannot be reproduced",
+      "owner": "Data lead",
+      "control": "Saved source hashes, model version, run ID, assumptions and review record.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R21",
+      "category": "Business claims",
+      "severity": "Medium",
+      "risk": "Illustrative ROI presented as achieved savings",
+      "owner": "Agency lead",
+      "control": "Use client-approved baseline and measured pilot outcomes; no invented ROI.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    },
+    {
+      "id": "R22",
+      "category": "Data completeness",
+      "severity": "High",
+      "risk": "Missing records or labels counted as compliance",
+      "owner": "Data steward",
+      "control": "Coverage reporting; no compliance denominator without validated observations.",
+      "status": "Open: requires client/site review",
+      "likelihood": "Not assessed"
+    }
+  ]
+}

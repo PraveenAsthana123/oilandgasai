@@ -1,0 +1,15 @@
+node_modules/
+.next/
+*.db
+.env
+.env.local
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+artifacts/
+data/kaggle/
+data/models/
+data/generated/
+data/public/
