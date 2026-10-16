@@ -81,6 +81,7 @@ const engineeringItems = [
   { href: '/tech-stack', label: 'Tech Stack', icon: '🛠️' },
   { href: '/tools', label: 'Tool Registry', icon: '🔧' },
   { href: '/file-alignment', label: 'File Alignment', icon: '🔗' },
+  { href: '/integrations', label: 'GitHub Integrations', icon: '🔗' },
 ];
 
 const adminItems = [
