@@ -101,6 +101,16 @@ const engineeringItems = [
   { href: '/integrations', label: 'GitHub Integrations', icon: '🔗' },
 ];
 
+const operationsItems = [
+  { href: '/proposals', label: 'Proposals', icon: '📋' },
+  { href: '/quotations', label: 'Quotations', icon: '💬' },
+  { href: '/orders', label: 'Orders', icon: '📦' },
+  { href: '/notifications', label: 'Notifications', icon: '🔔' },
+  { href: '/milestones', label: 'Milestones', icon: '🎯' },
+  { href: '/projects', label: 'Projects', icon: '🏗️' },
+  { href: '/plans', label: 'Plans', icon: '📐' },
+];
+
 const adminItems = [
   { href: '/admin', label: 'Admin Hub', icon: '⚡' },
   { href: '/admin/users', label: 'Users', icon: '👥' },
@@ -130,6 +140,19 @@ const salesItems = [
   { href: '/sales/accounts', label: 'Accounts', icon: '🏢' },
   { href: '/sales/activities', label: 'Activities', icon: '📅' },
   { href: '/sales/reports', label: 'Reports', icon: '📈' },
+];
+
+const workspaceItems = [
+  { href: '/settings', label: 'Settings', icon: '⚙️' },
+  { href: '/appointments', label: 'Appointments', icon: '📅' },
+  { href: '/calendar', label: 'Calendar', icon: '🗓️' },
+  { href: '/workflows', label: 'Workflows', icon: '🔄' },
+  { href: '/approvals', label: 'Approvals', icon: '✅' },
+  { href: '/documents', label: 'Documents', icon: '📄' },
+  { href: '/contacts', label: 'Contacts', icon: '👥' },
+  { href: '/payments', label: 'Payments', icon: '💳' },
+  { href: '/blog', label: 'Blog', icon: '📰' },
+  { href: '/geolocation', label: 'Geo Map', icon: '🗺️' },
 ];
 
 type NavItem = { href: string; label: string; icon: string };
@@ -180,9 +203,11 @@ export default function Sidebar() {
         <NavSection title="── AI / ML ──" items={aiItems} pathname={pathname} />
         <NavSection title="── Data ──" items={dataItems} pathname={pathname} />
         <NavSection title="── Engineering ──" items={engineeringItems} pathname={pathname} />
+        <NavSection title="── Operations ──" items={operationsItems} pathname={pathname} />
         <NavSection title="── Admin ──" items={adminItems} pathname={pathname} />
         <NavSection title="── Customer ──" items={customerItems} pathname={pathname} />
         <NavSection title="── Sales ──" items={salesItems} pathname={pathname} />
+        <NavSection title="── Workspace ──" items={workspaceItems} pathname={pathname} />
       </nav>
 
       <div className="p-3 border-t border-[#1e2a45] flex-shrink-0">
