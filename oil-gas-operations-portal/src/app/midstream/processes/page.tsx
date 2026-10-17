@@ -95,7 +95,6 @@ export default function MidstreamProcessesPage() {
               />
               <foreignObject x={node.x + 4} y={44} width={132} height={62}>
                 <div
-                  xmlns="http://www.w3.org/1999/xhtml"
                   className="flex flex-col items-center justify-center h-full text-center px-1"
                 >
                   <span className="text-amber-400 font-semibold" style={{ fontSize: 11 }}>{node.label}</span>

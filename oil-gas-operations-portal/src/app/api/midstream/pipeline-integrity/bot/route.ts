@@ -29,8 +29,8 @@ async function ensureTables(client: import('pg').PoolClient) {
 }
 
 export async function GET() {
-  const client = await pool.connect();
   try {
+    const client = await pool.connect();
     await ensureTables(client);
     const res = await client.query(
       `SELECT role, content, created_at AS ts FROM ogo_bot_conversation
@@ -39,8 +39,6 @@ export async function GET() {
     return NextResponse.json({ history: res.rows.reverse() });
   } catch (e: unknown) {
     return NextResponse.json({ history: [], error: String(e) });
-  } finally {
-    client.release();
   }
 }
 
@@ -104,7 +102,5 @@ Provide a concise, technical answer focused on pipeline integrity, corrosion man
     return NextResponse.json({ response });
   } catch (e: unknown) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
-  } finally {
-    client.release();
   }
 }

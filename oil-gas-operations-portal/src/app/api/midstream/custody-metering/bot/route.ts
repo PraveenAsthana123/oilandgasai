@@ -13,13 +13,12 @@ async function ensureTables(client: import('pg').PoolClient) {
 }
 
 export async function GET() {
-  const client = await pool.connect();
   try {
+    const client = await pool.connect();
     await ensureTables(client);
     const res = await client.query(`SELECT role, content, created_at AS ts FROM ogo_bot_conversation WHERE dept='midstream-custody-metering' ORDER BY created_at DESC LIMIT 20`);
     return NextResponse.json({ history: res.rows.reverse() });
   } catch (e: unknown) { return NextResponse.json({ history: [], error: String(e) }); }
-  finally { client.release(); }
 }
 
 export async function POST(req: NextRequest) {

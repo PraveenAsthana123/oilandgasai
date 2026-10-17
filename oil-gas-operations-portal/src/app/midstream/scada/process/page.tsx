@@ -205,7 +205,7 @@ export default function ScadaProcessPage() {
                 <g key={i}>
                   <rect x={s.x} y={30} width={145} height={55} rx="8" fill={s.color} stroke={s.border} strokeWidth="1.5" />
                   <foreignObject x={s.x + 4} y={33} width={137} height={49}>
-                    <div xmlns="http://www.w3.org/1999/xhtml" className="flex items-center justify-center h-full">
+                    <div className="flex items-center justify-center h-full">
                       <span style={{ fontSize: 12, color: '#f3f4f6', fontWeight: 600 }}>{s.label}</span>
                     </div>
                   </foreignObject>

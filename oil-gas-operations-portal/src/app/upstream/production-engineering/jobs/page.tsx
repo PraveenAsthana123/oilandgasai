@@ -4,7 +4,7 @@ interface JobRun { id:number;job_name:string;status:string;rows_processed:number
 export default function ProductionJobsPage() {
   const [running,setRunning]=useState(false);
   const [history,setHistory]=useState<JobRun[]>([]);
-  const runJob=async()=>{setRunning(true);try{const r=await fetch('/api/upstream/production-engineering/jobs/run',{method:'POST'});setHistory(prev=>[await r.json(),...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
+  const runJob=async()=>{setRunning(true);try{const r=await fetch('/api/upstream/production-engineering/jobs/run',{method:'POST'});const job=await r.json();setHistory(prev=>[job,...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
   const jobs=[
     {name:'upstream_production_import',schedule:'0 1 * * *',desc:'Import ONRR production CSV into ogo_prod_metric'},
     {name:'upstream_production_monthly',schedule:'0 2 * * *',desc:'Aggregate monthly production by commodity and state'},

@@ -222,7 +222,7 @@ export default function MeteringProcessPage() {
             <g key={i}>
               <rect x={n.x} y={25} width={155} height={65} rx="8" fill="#0a0e1a" stroke="#d97706" strokeWidth="1.5" />
               <foreignObject x={n.x + 4} y={28} width={147} height={59}>
-                <div xmlns="http://www.w3.org/1999/xhtml" className="flex flex-col items-center justify-center h-full text-center">
+                <div className="flex flex-col items-center justify-center h-full text-center">
                   <span style={{ fontSize: 9, color: '#d97706', fontWeight: 700 }}>Step {n.step}</span>
                   <span style={{ fontSize: 11, color: '#f3f4f6', fontWeight: 600, marginTop: 2 }}>{n.label}</span>
                   <span style={{ fontSize: 9, color: '#9ca3af' }}>{n.sub}</span>

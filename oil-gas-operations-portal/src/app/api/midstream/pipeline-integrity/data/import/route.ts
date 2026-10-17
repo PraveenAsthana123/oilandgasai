@@ -5,7 +5,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Pool } from 'pg';
 import fs from 'fs';
 import path from 'path';
-import { parse } from 'csv-parse/sync';
+function parseCSV(content: string): Record<string, string>[] {
+  const lines = content.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  return lines.slice(1).map(line => {
+    const values = line.split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+    return Object.fromEntries(headers.map((h, i) => [h, values[i] ?? '']));
+  });
+}
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
@@ -55,7 +63,7 @@ export async function POST(_req: NextRequest) {
     }
 
     const raw = fs.readFileSync(CSV_PATH, 'utf-8');
-    const records = parse(raw, { columns: true, skip_empty_lines: true, trim: true });
+    const records = parseCSV(raw);
 
     await client.query('DELETE FROM ogo_pipe_metric');
     let count = 0;

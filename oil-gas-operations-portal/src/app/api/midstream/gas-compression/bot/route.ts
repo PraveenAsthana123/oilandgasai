@@ -13,8 +13,8 @@ async function ensureTables(client: import('pg').PoolClient) {
 }
 
 export async function GET() {
-  const client = await pool.connect();
   try {
+    const client = await pool.connect();
     await ensureTables(client);
     const res = await client.query(
       `SELECT role, content, created_at AS ts FROM ogo_bot_conversation WHERE dept='midstream-gas-compression' ORDER BY created_at DESC LIMIT 20`
@@ -22,7 +22,7 @@ export async function GET() {
     return NextResponse.json({ history: res.rows.reverse() });
   } catch (e: unknown) {
     return NextResponse.json({ history: [], error: String(e) });
-  } finally { client.release(); }
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -65,5 +65,5 @@ Answer concisely about gas compression, IoT sensor monitoring, CO/LPG thresholds
     return NextResponse.json({ response });
   } catch (e: unknown) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
-  } finally { client.release(); }
+  }
 }

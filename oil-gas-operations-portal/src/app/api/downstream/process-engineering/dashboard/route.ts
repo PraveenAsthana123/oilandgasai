@@ -34,6 +34,10 @@ export async function GET() {
       facies_dist: faciesRes.rows,
     });
   } catch (err: unknown) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    const msg = String(err);
+    if (msg.includes('ECONNREFUSED') || msg.includes('connect') || msg.includes('DATABASE_URL')) {
+      return NextResponse.json({ empty: true, message: 'Database not configured. Set DATABASE_URL to enable.', _mock: true });
+    }
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

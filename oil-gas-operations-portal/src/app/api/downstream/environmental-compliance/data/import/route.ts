@@ -7,7 +7,15 @@ export const runtime = 'nodejs';
 import { NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import fs from 'fs';
-import { parse } from 'csv-parse/sync';
+function parseCSV(content: string): Record<string, string>[] {
+  const lines = content.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  return lines.slice(1).map(line => {
+    const values = line.split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+    return Object.fromEntries(headers.map((h, i) => [h, values[i] ?? '']));
+  });
+}
 
 const METHANE_CSV = '/mnt/deepa/IoT/code/oil-gas-monitoring/data/kaggle/methane-emissions/content/methane_hist_emissions.csv';
 const SPILL_CSV = '/mnt/deepa/IoT/code/oil-gas-monitoring/data/kaggle/oil-spill-incidents/content/Oil spillage dataset.csv';
@@ -35,7 +43,7 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Spill CSV not found', path: SPILL_CSV }, { status: 404 });
       }
       const content = fs.readFileSync(SPILL_CSV, 'utf-8');
-      const records = parse(content, { columns: true, skip_empty_lines: true, trim: true });
+      const records = parseCSV(content);
       let inserted = 0, skipped = 0;
       await client.query('BEGIN');
       for (const row of records) {
@@ -74,7 +82,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Methane CSV not found', path: METHANE_CSV }, { status: 404 });
     }
     const content = fs.readFileSync(METHANE_CSV, 'utf-8');
-    const records = parse(content, { columns: true, skip_empty_lines: true, trim: true });
+    const records = parseCSV(content);
 
     let inserted = 0, skipped = 0;
     await client.query('BEGIN');

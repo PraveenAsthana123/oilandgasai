@@ -20,8 +20,8 @@ async function ensureTable(client: import('pg').PoolClient) {
 }
 
 export async function GET() {
-  const client = await pool.connect();
   try {
+    const client = await pool.connect();
     await ensureTable(client);
     const countRes = await client.query('SELECT COUNT(*) AS cnt FROM ogo_metering_metric');
     const total_records = parseInt(countRes.rows[0].cnt, 10);
@@ -50,6 +50,11 @@ export async function GET() {
       by_commodity,
       empty: false,
     });
-  } catch (e: unknown) { return NextResponse.json({ total_volume: 0, commodity_count: 0, top_state: null, measurement_points: 0, by_commodity: [], empty: true, error: String(e) }); }
-  finally { client.release(); }
+  } catch (e: unknown) {
+    const msg = String(e);
+    if (msg.includes('ECONNREFUSED') || msg.includes('connect') || msg.includes('DATABASE_URL')) {
+      return NextResponse.json({ total_volume: 0, commodity_count: 0, top_state: null, measurement_points: 0, by_commodity: [], empty: true, _mock: true });
+    }
+    return NextResponse.json({ total_volume: 0, commodity_count: 0, top_state: null, measurement_points: 0, by_commodity: [], empty: true, error: msg });
+  }
 }

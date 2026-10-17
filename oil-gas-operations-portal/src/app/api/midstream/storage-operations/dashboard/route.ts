@@ -7,8 +7,8 @@ import { Pool } from 'pg';
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 export async function GET() {
-  const client = await pool.connect();
   try {
+    const client = await pool.connect();
     const tableCheck = await client.query(`SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_name='ogo_storage_metric') AS exists`);
     if (!tableCheck.rows[0].exists) {
       return NextResponse.json({ total_volume: 0, commodity_types: 0, states_count: 0, latest_date: '—', volume_by_state: [], monthly_trend: [], commodity_split: [], alerts: [] });
@@ -37,7 +37,11 @@ export async function GET() {
       commodity_split: byCommodity.rows.map(r => ({ commodity: r.commodity, volume: parseFloat(r.volume) })),
       alerts,
     });
-  } catch (e: unknown) {
-    return NextResponse.json({ error: String(e) }, { status: 500 });
-  } finally { client.release(); }
+  } catch (err: unknown) {
+    const msg = String(err);
+    if (msg.includes('ECONNREFUSED') || msg.includes('connect') || msg.includes('DATABASE_URL')) {
+      return NextResponse.json({ empty: true, message: 'Database not configured. Set DATABASE_URL to enable.', _mock: true });
+    }
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
 }

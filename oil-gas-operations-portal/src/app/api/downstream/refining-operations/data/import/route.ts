@@ -5,7 +5,15 @@ import { NextResponse } from 'next/server';
 import pool from '@/lib/db';
 import fs from 'fs';
 import path from 'path';
-import { parse } from 'csv-parse/sync';
+function parseCSV(content: string): Record<string, string>[] {
+  const lines = content.split('\n').filter(l => l.trim());
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  return lines.slice(1).map(line => {
+    const values = line.split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+    return Object.fromEntries(headers.map((h, i) => [h, values[i] ?? '']));
+  });
+}
 
 const CSV_PATH = '/mnt/deepa/IoT/code/oil-gas-monitoring/data/kaggle/production-trends/content/OGORBcsv_cleaned.csv';
 
@@ -28,7 +36,7 @@ export async function POST() {
     }
 
     const content = fs.readFileSync(CSV_PATH, 'utf-8');
-    const records = parse(content, { columns: true, skip_empty_lines: true, trim: true });
+    const records = parseCSV(content);
 
     let inserted = 0;
     let skipped = 0;

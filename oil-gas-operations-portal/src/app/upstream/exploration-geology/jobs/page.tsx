@@ -4,7 +4,7 @@ interface JobRun { id:number;job_name:string;status:string;rows_processed:number
 export default function ExplorationJobsPage() {
   const [running, setRunning] = useState(false);
   const [history, setHistory] = useState<JobRun[]>([]);
-  const runJob = async () => { setRunning(true); try{const r=await fetch('/api/upstream/exploration-geology/jobs/run',{method:'POST'});setHistory(prev=>[await r.json(),...prev.slice(0,9)]);}catch{/*skip*/} setRunning(false); };
+  const runJob = async () => { setRunning(true); try{const r=await fetch('/api/upstream/exploration-geology/jobs/run',{method:'POST'});const job=await r.json();setHistory(prev=>[job,...prev.slice(0,9)]);}catch{/*skip*/} setRunning(false); };
   const jobs = [
     {name:'upstream_exploration_import',schedule:'0 2 * * *',desc:'Import well facies CSV into ogo_exp_metric'},
     {name:'upstream_exploration_facies',schedule:'0 3 * * *',desc:'Classify facies distribution by formation and well'},

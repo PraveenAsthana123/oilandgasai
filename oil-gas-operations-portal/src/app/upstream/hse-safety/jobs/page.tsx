@@ -3,7 +3,7 @@ import { useState } from 'react';
 interface JobRun { id:number;job_name:string;status:string;rows_processed:number;started_at:string;completed_at:string; }
 export default function HSEJobsPage() {
   const [running,setRunning]=useState(false);const [history,setHistory]=useState<JobRun[]>([]);
-  const runJob=async()=>{setRunning(true);try{setHistory(prev=>[...[await(await fetch('/api/upstream/hse-safety/jobs/run',{method:'POST'})).json()],...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
+  const runJob=async()=>{setRunning(true);try{const job=await(await fetch('/api/upstream/hse-safety/jobs/run',{method:'POST'})).json();setHistory(prev=>[job,...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
   const jobs=[{name:'upstream_hse_import',schedule:'0 2 * * *',desc:'Import pipeline accidents with severity classification into ogo_hse_metric'},{name:'upstream_hse_risk_matrix',schedule:'0 4 * * *',desc:'Generate risk matrix by cause × severity for PSM reporting'},{name:'upstream_hse_kpi',schedule:'0 6 1 * *',desc:'Calculate TRIR, LTIR, PSE rates from incident data'}];
   return(<div className="min-h-screen bg-[#0a0e1a] text-gray-300 p-6"><div className="max-w-5xl mx-auto">
     <h1 className="text-2xl font-bold text-amber-400 mb-2">HSE Safety — Jobs</h1>

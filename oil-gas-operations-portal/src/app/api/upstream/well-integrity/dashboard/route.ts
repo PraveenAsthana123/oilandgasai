@@ -22,6 +22,10 @@ export async function GET(_req: NextRequest) {
 
     return NextResponse.json({ kpis: kpis.rows[0], causeDistribution: causeDist.rows, topStates: topStates.rows, yearTrend: yearTrend.rows });
   } catch (err: unknown) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    const msg = String(err);
+    if (msg.includes('ECONNREFUSED') || msg.includes('connect') || msg.includes('DATABASE_URL')) {
+      return NextResponse.json({ empty: true, message: 'Database not configured. Set DATABASE_URL to enable.', _mock: true });
+    }
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

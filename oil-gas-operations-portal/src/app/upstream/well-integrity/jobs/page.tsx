@@ -4,7 +4,7 @@ interface JobRun { id:number;job_name:string;status:string;rows_processed:number
 export default function WellIntegrityJobsPage() {
   const [running,setRunning]=useState(false);
   const [history,setHistory]=useState<JobRun[]>([]);
-  const runJob=async()=>{setRunning(true);try{setHistory(prev=>[...[await(await fetch('/api/upstream/well-integrity/jobs/run',{method:'POST'})).json()],...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
+  const runJob=async()=>{setRunning(true);try{const job=await(await fetch('/api/upstream/well-integrity/jobs/run',{method:'POST'})).json();setHistory(prev=>[job,...prev.slice(0,9)]);}catch{/*skip*/}setRunning(false);};
   const jobs=[{name:'upstream_wellintegrity_import',schedule:'0 2 * * *',desc:'Import pipeline accidents CSV into ogo_wi_metric'},{name:'upstream_wellintegrity_trend',schedule:'0 3 * * *',desc:'Analyze incident trends by cause and year'},{name:'upstream_wellintegrity_risk',schedule:'0 6 1 * *',desc:'Generate risk score by pipeline segment and operator'}];
   return(
     <div className="min-h-screen bg-[#0a0e1a] text-gray-300 p-6">

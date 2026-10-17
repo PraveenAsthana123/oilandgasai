@@ -397,7 +397,7 @@ async function upsertData() {
     `, [
       'P-US-DRILL-PF', p.step_number, p.step_name, p.phase, p.duration,
       p.activities, p.deliverables, p.responsible,
-      JSON.stringify(p.ai_tools), JSON.stringify(p.kpis ?? []),
+      JSON.stringify(p.ai_tools), JSON.stringify((p as Record<string, unknown>).kpis ?? []),
       JSON.stringify(p.decision_gate), p.regulatory, p.kaggle_data,
     ]);
   }
