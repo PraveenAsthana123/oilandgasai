@@ -11,6 +11,13 @@ const CHIPS = [
   'Temperature spike analysis',
 ];
 
+const QUICK_CHIPS = [
+  'What is polytropic efficiency?',
+  'Show compressor KPIs',
+  'Explain surge control',
+  'Calculate compression ratio',
+];
+
 export default function GasCompressionBotPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -72,6 +79,18 @@ export default function GasCompressionBotPage() {
           className="flex-1 bg-[#0f1629] border border-[#1e2a45] text-white rounded-xl px-4 py-2.5 text-sm outline-none focus:border-amber-500 disabled:opacity-50" />
         <button onClick={() => send(input)} disabled={loading || !input.trim()}
           className="bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-black font-semibold px-5 py-2.5 rounded-xl text-sm">Send</button>
+      </div>
+      {/* Quick action chips */}
+      <div className="flex flex-wrap gap-2 mb-3">
+        {QUICK_CHIPS.map((chip, i) => (
+          <button
+            key={i}
+            onClick={() => setInput(chip)}
+            className="px-3 py-1 text-xs bg-[#1e2a45] border border-[#2a3a5c] rounded-full text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40 transition-colors"
+          >
+            {chip}
+          </button>
+        ))}
       </div>
     </div>
   );

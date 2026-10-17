@@ -31,6 +31,14 @@ const PIPELINE_INTEGRITY_KNOWLEDGE = [
     source: 'failure-prevention',
     content: 'Top pipeline failure causes: corrosion (30%), third-party damage (25%), operational error (15%), material/weld defects (15%), natural forces (15%). Pipeline accident records (cause, barrels spilled, costs) inform risk prioritization and regulatory reporting.',
   },
+  {
+    source: 'direct-assessment-methods',
+    content: 'Direct Assessment (DA) methods for unpiggable pipelines include External Corrosion DA (ECDA), Internal Corrosion DA (ICDA), and Stress Corrosion Cracking DA (SCCDA) per NACE SP0502. ECDA uses above-ground surveys (DCVG, ACVG, CIS) to locate coating holidays, then excavates the top 10% of anomaly indications. ICDA models internal flow regime (wet vs. dry gas) to identify low-flow liquid accumulation regions prone to MIC and CO2 corrosion.',
+  },
+  {
+    source: 'risk-assessment-index-model',
+    content: 'Pipeline risk assessment uses a semi-quantitative index model scoring four threat categories: corrosion (0-100 pts), design (0-100 pts), incorrect operations (0-100 pts), and third-party damage (0-100 pts). The composite risk index = threat score / (consequence factor × mitigation factor). High-consequence areas (HCAs) within 200m of populated areas require integrity verification within 7 years per NEB OPR Section 40. Annual CPCN performance reports to CER must include km of ILI completed and anomaly remediation status.',
+  },
 ];
 
 async function ensureTable(client: import('pg').PoolClient) {

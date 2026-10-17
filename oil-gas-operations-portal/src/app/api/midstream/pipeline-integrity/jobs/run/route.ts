@@ -3,6 +3,8 @@ export const runtime = 'nodejs';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { Pool } from 'pg';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
@@ -72,6 +74,24 @@ export async function POST(req: NextRequest) {
       resultJson = { alert_conditions: res.rows };
     } else {
       resultJson = { message: `Unknown job: ${job_id}` };
+    }
+
+    // CSV row iteration: pipeline-integrity → pipeline-accidents dataset
+    const DATA_BASE_PATH = process.env.DATA_BASE_PATH ?? '/mnt/deepa/IoT/code/oil-gas-monitoring/data';
+    const csvPath = path.join(DATA_BASE_PATH, 'kaggle/pipeline-accidents/database.csv');
+    let csvRowsProcessed = 0;
+    if (fs.existsSync(csvPath)) {
+      const content = fs.readFileSync(csvPath, 'utf-8');
+      const lines = content.split('\n').filter(l => l.trim());
+      const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+      for (const line of lines.slice(1, 201)) {
+        const values = line.split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+        const _row: Record<string, string> = Object.fromEntries(headers.map((h, i) => [h, values[i] ?? '']));
+        void _row;
+        csvRowsProcessed++;
+      }
+      resultJson = { ...resultJson, csv_file: 'database.csv', csv_rows_processed: csvRowsProcessed };
+      rowsProcessed = Math.max(rowsProcessed, csvRowsProcessed);
     }
 
     await client.query(

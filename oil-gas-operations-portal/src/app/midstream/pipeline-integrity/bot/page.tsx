@@ -11,6 +11,13 @@ const CHIPS = [
   'Corrosion trend by material',
 ];
 
+const QUICK_CHIPS = [
+  'Show corrosion trends',
+  'What is MAOP?',
+  'Explain ILI pig inspection',
+  'Calculate wall thickness loss',
+];
+
 export default function PipelineIntegrityBotPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -113,6 +120,18 @@ export default function PipelineIntegrityBotPage() {
         >
           Send
         </button>
+      </div>
+      {/* Quick action chips */}
+      <div className="flex flex-wrap gap-2 mb-3">
+        {QUICK_CHIPS.map((chip, i) => (
+          <button
+            key={i}
+            onClick={() => setInput(chip)}
+            className="px-3 py-1 text-xs bg-[#1e2a45] border border-[#2a3a5c] rounded-full text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40 transition-colors"
+          >
+            {chip}
+          </button>
+        ))}
       </div>
     </div>
   );

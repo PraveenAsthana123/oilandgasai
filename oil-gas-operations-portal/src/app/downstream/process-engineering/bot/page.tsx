@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 interface Message { role: 'user' | 'assistant'; content: string; source?: string; }
-const CHIPS = ['Formation quality analysis','Process efficiency metrics','Identify bottlenecks','GR log interpretation','PHIND porosity analysis'];
+const CHIPS = ['Show unit KPIs', 'Explain FCC cracking', 'Hydrocracker efficiency', 'Energy balance optimization'];
 
 export default function ProcessEngBotPage() {
   const [messages, setMessages] = useState<Message[]>([
@@ -47,7 +47,20 @@ export default function ProcessEngBotPage() {
         {loading && <div className="flex justify-start"><div className="bg-gray-800 border border-gray-700 rounded-2xl px-4 py-3"><div className="flex gap-1">{[0,1,2].map(i=><div key={i} className="w-2 h-2 bg-amber-500 rounded-full animate-bounce" style={{ animationDelay: `${i*0.15}s` }} />)}</div></div></div>}
         <div ref={bottomRef} />
       </div>
-      <div className="px-6 pb-2"><div className="flex gap-2 flex-wrap">{CHIPS.map(c=><button key={c} onClick={()=>send(c)} disabled={loading} className="text-xs bg-amber-900/30 hover:bg-amber-800/50 border border-amber-800/50 text-amber-300 px-3 py-1.5 rounded-full transition-colors disabled:opacity-40">{c}</button>)}</div></div>
+      <div className="px-6 pb-2">
+        {/* Quick action chips */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {CHIPS.map((chip, i) => (
+            <button
+              key={i}
+              onClick={() => setInput(chip)}
+              className="px-3 py-1 text-xs bg-[#1e2a45] border border-[#2a3a5c] rounded-full text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40 transition-colors"
+            >
+              {chip}
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="px-6 pb-6 pt-2">
         <div className="flex gap-3 bg-gray-900 border border-amber-900/40 rounded-xl p-3">
           <input className="flex-1 bg-transparent text-amber-50 placeholder-gray-600 outline-none text-sm" placeholder="Ask about well formations, petrophysics, process optimization…" value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==='Enter'&&!e.shiftKey&&(e.preventDefault(),send(input))} />

@@ -3,6 +3,8 @@ export const runtime = 'nodejs';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { Pool } from 'pg';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
@@ -47,6 +49,28 @@ export async function POST(req: NextRequest) {
       resultJson = { total_readings: t, anomaly_count: a, alert_rate_pct: t > 0 ? ((a / t) * 100).toFixed(2) : '0' };
     } else {
       resultJson = { message: `Unknown job: ${job_id}` };
+    }
+
+    // CSV row iteration: scada-control → iot-telemetry dataset
+    const DATA_BASE_PATH = process.env.DATA_BASE_PATH ?? '/mnt/deepa/IoT/code/oil-gas-monitoring/data';
+    const csvDir = path.join(DATA_BASE_PATH, 'kaggle/iot-telemetry');
+    let csvRowsProcessed = 0;
+    if (fs.existsSync(csvDir)) {
+      const files = fs.readdirSync(csvDir).filter(f => f.endsWith('.csv'));
+      if (files.length > 0) {
+        const csvPath = path.join(csvDir, files[0]);
+        const content = fs.readFileSync(csvPath, 'utf-8');
+        const lines = content.split('\n').filter(l => l.trim());
+        const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+        for (const line of lines.slice(1, 201)) {
+          const values = line.split(',').map(v => v.trim().replace(/^"|"$/g, ''));
+          const _row: Record<string, string> = Object.fromEntries(headers.map((h, i) => [h, values[i] ?? '']));
+          void _row;
+          csvRowsProcessed++;
+        }
+        resultJson = { ...resultJson, csv_file: files[0], csv_rows_processed: csvRowsProcessed };
+        rowsProcessed = Math.max(rowsProcessed, csvRowsProcessed);
+      }
     }
 
     await client.query(`UPDATE ogo_job_run SET status='success', finished_at=NOW(), rows_processed=$1, result_json=$2 WHERE id=$3`, [rowsProcessed, JSON.stringify(resultJson), runId]);

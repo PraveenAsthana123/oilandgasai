@@ -3,13 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 
 interface Message { role: 'user' | 'assistant'; content: string; source?: string; }
 
-const CHIPS = [
-  'Analyze refinery throughput',
-  'Yield optimization opportunities',
-  'Production forecast',
-  'Top producing states analysis',
-  'Crude distillation efficiency',
-];
+const CHIPS = ['Show CDU throughput', 'Explain atmospheric distillation', 'Current crude slate', 'Refinery margin calculation'];
 
 export default function RefiningBotPage() {
   const [messages, setMessages] = useState<Message[]>([
@@ -89,15 +83,14 @@ export default function RefiningBotPage() {
 
       {/* Quick action chips */}
       <div className="px-6 pb-2">
-        <div className="flex gap-2 flex-wrap">
-          {CHIPS.map(c => (
+        <div className="flex flex-wrap gap-2 mb-3">
+          {CHIPS.map((chip, i) => (
             <button
-              key={c}
-              onClick={() => send(c)}
-              disabled={loading}
-              className="text-xs bg-amber-900/30 hover:bg-amber-800/50 border border-amber-800/50 text-amber-300 px-3 py-1.5 rounded-full transition-colors disabled:opacity-40"
+              key={i}
+              onClick={() => setInput(chip)}
+              className="px-3 py-1 text-xs bg-[#1e2a45] border border-[#2a3a5c] rounded-full text-amber-400 hover:bg-amber-500/10 hover:border-amber-500/40 transition-colors"
             >
-              {c}
+              {chip}
             </button>
           ))}
         </div>
