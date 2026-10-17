@@ -6,6 +6,7 @@ const overviewItems = [
   { href: '/', label: 'Command Center', icon: '⚡' },
   { href: '/use-cases', label: 'Use Case Registry', icon: '📋' },
   { href: '/departments', label: 'Department Directory', icon: '🏢' },
+  { href: '/departments/dashboard', label: 'Dept Intelligence Centre', icon: '🏭' },
   { href: '/ai-mapping', label: 'AI Technology Mapping', icon: '🗺️' },
   { href: '/bot', label: 'AI Bot Assistant', icon: '🤖' },
   { href: '/rag', label: 'RAG Knowledge Base', icon: '📚' },
@@ -19,8 +20,11 @@ const upstreamItems = [
   { href: '/upstream', label: 'Upstream Dashboard', icon: '🛢️' },
   { href: '/upstream/exploration', label: 'Seismic & Exploration', icon: '🔭' },
   { href: '/upstream/drilling', label: 'Drilling Operations', icon: '⚙️' },
+  { href: '/upstream/drilling-engineering/dashboard', label: 'Drilling Dashboard', icon: '⛏️' },
   { href: '/upstream/reservoir', label: 'Reservoir Management', icon: '🧪' },
+  { href: '/upstream/reservoir-engineering/dashboard', label: 'Reservoir Dashboard', icon: '🫙' },
   { href: '/upstream/production', label: 'Production Engineering', icon: '📊' },
+  { href: '/upstream/production-engineering/dashboard', label: 'Production Dashboard', icon: '🛢️' },
   { href: '/upstream/well-integrity', label: 'Well Integrity', icon: '🔩' },
   { href: '/upstream/hse', label: 'HSE Management', icon: '⛑️' },
 ];
@@ -28,10 +32,12 @@ const upstreamItems = [
 const midstreamItems = [
   { href: '/midstream', label: 'Midstream Dashboard', icon: '🔗' },
   { href: '/midstream/pipeline', label: 'Pipeline Operations', icon: '〰️' },
+  { href: '/midstream/pipeline-integrity/dashboard', label: 'Pipeline Dashboard', icon: '🔧' },
   { href: '/midstream/compression', label: 'Compression Mgmt', icon: '🔄' },
   { href: '/midstream/gas-processing', label: 'Gas Processing', icon: '💨' },
   { href: '/midstream/storage', label: 'Storage Operations', icon: '🗄️' },
   { href: '/midstream/scada', label: 'SCADA & Control', icon: '🖥️' },
+  { href: '/midstream/scada-control/dashboard', label: 'SCADA Dashboard', icon: '📡' },
   { href: '/midstream/metering', label: 'Custody Transfer Metering', icon: '📏' },
 ];
 
@@ -42,7 +48,18 @@ const downstreamItems = [
   { href: '/downstream/quality', label: 'Product Quality', icon: '✅' },
   { href: '/downstream/distribution', label: 'Distribution & Logistics', icon: '🚛' },
   { href: '/downstream/trading', label: 'Commercial & Trading', icon: '📈' },
+  { href: '/downstream/crude-trading/dashboard', label: 'Trading Dashboard', icon: '📈' },
   { href: '/downstream/environmental', label: 'Environmental Compliance', icon: '🌱' },
+  { href: '/downstream/environmental-compliance/dashboard', label: 'Environmental Dashboard', icon: '🌿' },
+];
+
+const crossCuttingItems = [
+  { href: '/departments/data-science-ai/dashboard', label: 'Data Science & AI', icon: '🧠' },
+  { href: '/departments/mechanical-maintenance/dashboard', label: 'Mechanical Maintenance', icon: '🔧' },
+  { href: '/departments/petroleum-economics/dashboard', label: 'Petroleum Economics', icon: '💰' },
+  { href: '/departments/regulatory-affairs/dashboard', label: 'Regulatory Affairs', icon: '⚖️' },
+  { href: '/departments/project-management/dashboard', label: 'Project Management', icon: '📋' },
+  { href: '/departments/procurement/dashboard', label: 'Procurement', icon: '🛒' },
 ];
 
 const aiItems = [
@@ -159,6 +176,7 @@ export default function Sidebar() {
         <NavSection title="── Upstream ──" items={upstreamItems} pathname={pathname} />
         <NavSection title="── Midstream ──" items={midstreamItems} pathname={pathname} />
         <NavSection title="── Downstream ──" items={downstreamItems} pathname={pathname} />
+        <NavSection title="── Cross-cutting ──" items={crossCuttingItems} pathname={pathname} />
         <NavSection title="── AI / ML ──" items={aiItems} pathname={pathname} />
         <NavSection title="── Data ──" items={dataItems} pathname={pathname} />
         <NavSection title="── Engineering ──" items={engineeringItems} pathname={pathname} />
